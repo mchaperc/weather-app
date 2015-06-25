@@ -1,0 +1,72 @@
+@import 'bower_components/bourbon/app/assets/stylesheets/bourbon';
+@import 'bower_components/neat/app/assets/stylesheets/neat';
+
+$light-gray: rgb(200,200,200);
+$blue: rgb(142, 220, 250);
+$black: rgb(3, 6, 17);
+$orange: rgb(246, 133, 36);
+$green: rgb(108, 165, 111);
+$red: rgb(239, 24, 32);
+$yellow: rgb(255, 241, 60);
+
+* {
+	box-sizing: border-box;
+	outline: none;
+	text-decoration: none;
+}
+
+body {
+	background-image: url('Rainy-Weather_2.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+	font-family: sans-serif;
+	height: 100%;
+	width: 100%;
+}
+
+.blur {
+	background-color: rgba(80,80,80, .5);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	text-align: center;
+	top: 0;
+	width: 100%;
+}
+
+.main-title {
+	color: rgba(255,255,255, .9);
+	font-family: 'Marcellus SC', serif;
+	font-size: 8em;
+	margin-bottom: .3em;
+	margin-top: 20%;
+}
+
+.main-get-weather {
+	background: linear-gradient($orange 1px, $red);
+	border: none;
+	border-radius: 10px;
+	display: block;
+	font-size: 1.6em;
+	height: 50px;
+	margin: auto;
+	margin-bottom: 1em;
+	transition: all .4s linear;
+	width: 30%;
+}
+
+.main-get-weather:hover {
+	box-shadow: inset 0 0 5px $black;
+	color: white;
+	cursor: pointer;
+}
+
+.main-other-locales {
+	border: 2px solid $black;
+	border-radius: 5px;
+	box-shadow: inset 0 2px 3px rgba(0,0,0,.3);
+	font-size: 1em;
+	height: 40px;
+	padding: 1em;
+	width: 20%;
+}

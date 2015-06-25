@@ -2,6 +2,15 @@
 
 module.exports = function(environment) {
   var ENV = {
+    contentSecurityPolicy: {
+      'default-src': "'self'",
+      'script-src': "'self' connect.soundcloud.com",
+      'font-src': "'self' fonts.gstatic.com",
+      'connect-src': "'self'",
+      'img-src': "'self'",
+      'style-src': "'self' cdnjs.cloudflare.com maxcdn.bootstrapcdn.com fonts.googleapis.com",
+      'media-src': "'self'"
+    },
     modulePrefix: 'weather-app',
     environment: environment,
     baseURL: '/',
