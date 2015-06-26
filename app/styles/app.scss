@@ -125,7 +125,7 @@ Local Weather
 	font-size: .5em;
 	font-weight: 100;
 	position: absolute;
-	right: 10%;
+	right: 8%;
 	top: 10%;
 }
 
@@ -145,13 +145,38 @@ Local Weather
 }
 
 .future-weather-container {
-	@include span-columns(9);
-	@include shift(1.5);
+	@include span-columns(12);
 	margin-top: 2em;
 }
 
 .tomorrow-weather-container {
-	box-shadow: 0 0 5px rgba(0,0,0,.6);
+	background-color: rgba(200,200,200,.4);
+	box-shadow: 0 0 10px rgba(0,0,0,.6);
+	font-size: 2em;
 	height: 50px;
 	width: 100%;
+}
+
+.tomorrow-weather-container li {
+	// display: inline-block;
+	line-height: 50px;
+}
+
+.tomorrow-heading {
+	@include span-columns(2);
+	@include shift(1);
+}
+
+.tomorrow-icon {
+	@include span-columns(1);
+}
+
+.tomorrow-weather-conditions {
+	@include span-columns(6);
+	font-size: .7em;
+}
+
+.tomorrow-weather-max-min {
+	@include span-columns(2);
+	line-height: 50px;
 }

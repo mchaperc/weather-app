@@ -13,11 +13,11 @@
 	</div>
 	<div class="future-weather-container">
 		{{log results}}
-		<div class="tomorrow-weather-container">
-			<h3 class="tomorrow-heading">Tomorrow: </h3>
-			<i class="wi wi-day-cloudy"></i>
-			<p class="tomorrow-weather-conditions">{{tomorrowConditions}}</p>
-			<p class="tomorrow-weather-max-min">{{tomorrowMaxTemp}}/{{tomorrowMinTemp}}</p>
-		</div>
+		<ul class="tomorrow-weather-container">
+			<li class="tomorrow-heading">Tomorrow: </li>
+			<li class="wi wi-day-cloudy tomorrow-icon"></li>
+			<li class="tomorrow-weather-conditions">{{tomorrowConditions}}</li>
+			<li class="tomorrow-weather-max-min">{{tomorrowMaxTemp}}/{{tomorrowMinTemp}}</li>
+		</ul>
 	</div>
 </div>

@@ -6,11 +6,6 @@ export default Ember.Component.extend({
 
 	init: function() {
 		this._super();
-		var temp = this.get('results.currently.temperature');
-		temp = temp.toString().slice(0,2);
-		this.set('results.currently.temperature', temp);
-		var todayMaxTemp = this.get('results.daily.data.0.temperatureMax');
-		// console.log(todayMaxTemp);
 	},
 
 	currentTemp: function() {
@@ -23,6 +18,14 @@ export default Ember.Component.extend({
 
 	tomorrowConditions: function() {
 		return this.get('results.daily.data.1.summary');
+	}.property('results.@each'),
+
+	tomorrowMaxTemp: function() {
+		return this.get('results.daily.data.1.temperatureMax').toString().slice(0,2);
+	}.property('results.@each'),
+
+	tomorrowMinTemp: function() {
+		return this.get('results.daily.data.1.temperatureMin').toString().slice(0,2);
 	}.property('results.@each')
 
 });
