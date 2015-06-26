@@ -4,7 +4,7 @@ module.exports = function(environment) {
   var ENV = {
     contentSecurityPolicy: {
       'default-src': "'self'",
-      'script-src': "'self' connect.soundcloud.com",
+      'script-src': "'self' api.forecast.io",
       'font-src': "'self' fonts.gstatic.com",
       'connect-src': "'self'",
       'img-src': "'self'",

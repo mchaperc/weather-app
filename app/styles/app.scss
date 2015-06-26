@@ -2,6 +2,7 @@
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
 $light-gray: rgb(200,200,200);
+$medium-gray: rgb(170,170,170);
 $blue: rgb(142, 220, 250);
 $black: rgb(3, 6, 17);
 $orange: rgb(246, 133, 36);
@@ -46,9 +47,11 @@ body {
 	background: linear-gradient($orange 1px, $red);
 	border: none;
 	border-radius: 10px;
+	color: rgba(0,0,0,.7);
 	display: block;
 	font-size: 1.6em;
 	height: 50px;
+	line-height: 50px;
 	margin: auto;
 	margin-bottom: 1em;
 	transition: all .4s linear;
@@ -69,4 +72,54 @@ body {
 	height: 40px;
 	padding: 1em;
 	width: 20%;
+}
+
+/**********************************
+Local Weather
+**********************************/
+
+.local-weather {
+	background-color: rgba(245,245,245,.9);
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.local-weather-header {
+	background-color: $blue;
+	border-bottom: 1px solid $medium-gray;
+	box-shadow: 0 3px 5px rgba(0,0,0,.3);
+	height: 120px;
+	width: 100%;
+}
+
+.local-weather-city {
+	color: $black;
+	display: inline-block;
+	font-size: 3em;
+	font-family: 'Roboto', sans-serif;
+	line-height: 120px;
+	margin-left: 2em;
+}
+
+.current-conditions {
+	color: white;
+	font-size: 4em;
+	line-height: 120px;
+	margin-left: 1em;
+}
+
+.local-weather-temperature {
+	border-left: 3px solid rgba(255,255,255,.9);
+	float: right;
+	height: 120px;
+	text-align: center;
+	width: 15%;
+}
+
+.local-weather-temperature-text {
+	font-size: 4em;
+	line-height: 120px;
 }

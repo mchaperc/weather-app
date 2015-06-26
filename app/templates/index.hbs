@@ -3,9 +3,7 @@
 <div class="blur">
 	
 	<h1 class="main-title">Weather</h1>
-	<a href="#weather{{model.latitude/model.longitude}}"><button class="main-get-weather">Get Local Weather</button></a>
-
-	{{#link-to 'weather' model.latitude model.longitude}}Weather{{/link-to}}
+	{{#link-to 'weather' model.latitude model.longitude class="main-get-weather"}}Get Local Weather{{/link-to}}
 	{{input class="main-other-locales" type="text" placeholder="Other Locales..." value=locale}}
 
 </div>
