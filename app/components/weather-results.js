@@ -54,6 +54,25 @@ export default Ember.Component.extend({
 	  return conditions[this.get('results.daily.data.1.icon')] || 'wi-day-sunny';
     }.property('results.daily.data.1.icon'),
 
+    // backgroundClass: "night-cloudy",
+
+	backgroundClass: function() {
+		var conditions = {
+			'clear-day': 'clear',
+		    'clear-night': 'night',
+		    'rain': 'rainy',
+		    'snow': 'snowy',
+		    'sleet': 'sleet',
+		    'wind': 'windy',
+		    'fog': 'foggy',
+		    'cloudy': 'cloudy',
+		    'partly-cloud-day': 'cloudy',
+		    'partly-cloudy-night': 'night-cloudy',
+		}
+		return conditions[this.get('results.currently.icon')] || '';
+	}.property('results.currently.icon'),
+
+
 	currentTemp: function() {
 		return this.get('results.currently.temperature').toString().slice(0,2);
 	}.property('results.@each'),

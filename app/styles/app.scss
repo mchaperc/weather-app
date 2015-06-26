@@ -2,6 +2,8 @@
 $gutter: 0em;
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
+$mobile: 980px;
+
 $light-gray: rgb(200,200,200);
 $medium-gray: rgb(170,170,170);
 $blue: rgb(132, 200, 230);
@@ -79,6 +81,12 @@ body {
 Local Weather
 **********************************/
 
+.background {
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
 .weather {
 	// @include outer-container(980px);
 	height: 100%;
@@ -101,7 +109,7 @@ Local Weather
 }
 
 .hot {
-	background :linear-gradient(rgba(20,20,20,.7), rgba(239, 54, 0, .7), rgba(235, 151, 20, .7));
+	background :linear-gradient(rgba(20,20,20,.8), rgba(255, 34, 0, .8), rgba(235, 151, 20, .8));
 }
 
 .today-weather-container {
@@ -125,7 +133,7 @@ Local Weather
 	font-size: .5em;
 	font-weight: 100;
 	position: absolute;
-	right: 8%;
+	right: 0;
 	top: 10%;
 }
 
@@ -172,11 +180,61 @@ Local Weather
 }
 
 .tomorrow-weather-conditions {
-	@include span-columns(6);
+	@include span-columns(5);
+	@include shift(1);
 	font-size: .7em;
 }
 
 .tomorrow-weather-max-min {
 	@include span-columns(2);
 	line-height: 50px;
+}
+
+.clear {
+	background-image: url('sunny-day.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.rainy {
+	background-image: url('rainy-day.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.windy {
+	background-image: url('windy.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.night {
+	background-image: url('night.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.foggy {
+	background-image: url('foggy.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.snowy {
+	background-image: url('snowy.jpg');
+	background-size: cover;
+	background-position: 30% 30%;
+	background-repeat: no-repeat;
+}
+
+.cloudy {
+	background-image: url('cloudy.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.night-cloudy {
+	background-image: url('night-cloudy.jpg');
+	background-size: cover;
+	background-repeat: no-repeat;	
 }
