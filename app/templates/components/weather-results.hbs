@@ -1,10 +1,23 @@
-<div class="local-weather">
-	<div class="local-weather-header">
-		<h2 class="local-weather-city">City:</h2>
-		<i class="wi wi-sunset current-conditions"></i>
-		<div class="local-weather-temperature">
-			<h3 class="local-weather-temperature-text">{{results.currently.temperature}}&deg;</h3>
+<div class="weather warm">
+	<div class="today-weather-container">
+		<div class="today-weather-temperature">
+			<h2 class="today-weather-temperature-text">{{currentTemp}}<span>&deg;</span></h2>
+		</div>
+		<!-- <div class="today-weather-max-min">
+			<h3>{{todayMin}} / {{todayMaxTemp}}</h3>
+		</div> -->
+		<div class="today-weather-conditions">
+			<i class="wi wi-day-sunny condition-icon"></i>
+			<p class="condition-text">{{results.currently.summary}}</p>
 		</div>
 	</div>
-
+	<div class="future-weather-container">
+		{{log results}}
+		<div class="tomorrow-weather-container">
+			<h3 class="tomorrow-heading">Tomorrow: </h3>
+			<i class="wi wi-day-cloudy"></i>
+			<p class="tomorrow-weather-conditions">{{tomorrowConditions}}</p>
+			<p class="tomorrow-weather-max-min">{{tomorrowMaxTemp}}/{{tomorrowMinTemp}}</p>
+		</div>
+	</div>
 </div>
