@@ -1,4 +1,4 @@
-<div class="weather warm">
+<div class="weather {{tempClass}}">
 	<div class="today-weather-container">
 		<div class="today-weather-temperature">
 			<h2 class="today-weather-temperature-text">{{currentTemp}}<span>&deg;</span></h2>
@@ -7,7 +7,7 @@
 			<h3>{{todayMin}} / {{todayMaxTemp}}</h3>
 		</div> -->
 		<div class="today-weather-conditions">
-			<i class="wi wi-day-sunny condition-icon"></i>
+			<i class="wi {{todayConditionClass}} condition-icon"></i>
 			<p class="condition-text">{{results.currently.summary}}</p>
 		</div>
 	</div>
@@ -15,7 +15,7 @@
 		{{log results}}
 		<ul class="tomorrow-weather-container">
 			<li class="tomorrow-heading">Tomorrow: </li>
-			<li class="wi wi-day-cloudy tomorrow-icon"></li>
+			<li class="wi {{tomorrowConditionClass}} tomorrow-icon"></li>
 			<li class="tomorrow-weather-conditions">{{tomorrowConditions}}</li>
 			<li class="tomorrow-weather-max-min">{{tomorrowMaxTemp}}/{{tomorrowMinTemp}}</li>
 		</ul>

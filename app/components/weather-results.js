@@ -8,6 +8,52 @@ export default Ember.Component.extend({
 		this._super();
 	},
 
+	tempClass: function() {
+		if (Number(this.get('currentTemp')) >= 90) {
+			return 'hot';
+		} else if (Number(this.get('currentTemp')) >= 70) {
+			return 'warm';
+		} else if (Number(this.get('currentTemp')) >= 50) {
+			return 'cool';
+		} else {
+			return 'cold';
+		}
+	}.property('results.@each'),
+
+    todayConditionClass: function() {
+	  var conditions = {
+	    'clear-day': 'wi-day-sunny',
+	    'clear-night': 'wi-',
+	    'rain': 'wi-rain',
+	    'snow': 'wi-snow',
+	    'sleet': 'wi-rain-mix',
+	    'wind': 'wi-cloudy-gusts',
+	    'fog': 'wi-fog',
+	    'cloudy': 'wi-cloudy',
+	    'partly-cloud-day': 'wi-cloudy',
+	    'partly-cloudy-night': 'night-partly-cloudy',
+
+	  };
+	  return conditions[this.get('results.currently.icon')] || 'wi-day-sunny';
+    }.property('results.currently.icon'),
+
+    tomorrowConditionClass: function() {
+	  var conditions = {
+	    'clear-day': 'wi-day-sunny',
+	    'clear-night': 'wi-',
+	    'rain': 'wi-rain',
+	    'snow': 'wi-snow',
+	    'sleet': 'wi-rain-mix',
+	    'wind': 'wi-cloudy-gusts',
+	    'fog': 'wi-fog',
+	    'cloudy': 'wi-cloudy',
+	    'partly-cloud-day': 'wi-cloudy',
+	    'partly-cloudy-night': 'night-partly-cloudy',
+
+	  };
+	  return conditions[this.get('results.daily.data.1.icon')] || 'wi-day-sunny';
+    }.property('results.daily.data.1.icon'),
+
 	currentTemp: function() {
 		return this.get('results.currently.temperature').toString().slice(0,2);
 	}.property('results.@each'),
