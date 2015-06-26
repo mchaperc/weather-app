@@ -6,7 +6,7 @@ module.exports = function(environment) {
       'default-src': "'self'",
       'script-src': "'self' api.forecast.io",
       'font-src': "'self' fonts.gstatic.com",
-      'connect-src': "'self'",
+      'connect-src': "'self' maps.googleapis.com",
       'img-src': "'self'",
       'style-src': "'self' cdnjs.cloudflare.com maxcdn.bootstrapcdn.com fonts.googleapis.com",
       'media-src': "'self'"

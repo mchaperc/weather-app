@@ -8,6 +8,12 @@ export default Ember.Route.extend({
 		}).then(function(position) {
 			return position.coords;
 		});
+	},
+
+	actions: {
+		search: function(locale) {
+			this.transitionTo('search', locale);
+		}
 	}
 
 })

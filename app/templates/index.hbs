@@ -1,9 +1,8 @@
-{{log model}}
-
 <div class="blur">
 	
 	<h1 class="main-title">Weather</h1>
 	{{#link-to 'weather' model.latitude model.longitude class="main-get-weather"}}Get Local Weather{{/link-to}}
-	{{input class="main-other-locales" type="text" placeholder="Other Locales..." value=locale}}
+	
+		{{search-box action='search'}}
 
 </div>
