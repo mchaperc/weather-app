@@ -2,7 +2,8 @@
 $gutter: 0em;
 @import 'bower_components/neat/app/assets/stylesheets/neat';
 
-$mobile: 980px;
+$tablet: 980px;
+$mobile: 760px;
 
 $light-gray: rgb(200,200,200);
 $medium-gray: rgb(170,170,170);
@@ -162,6 +163,7 @@ Local Weather
 	box-shadow: 0 0 10px rgba(0,0,0,.6);
 	font-size: 2em;
 	height: 50px;
+	margin-top: 2em;
 	width: 100%;
 }
 
@@ -177,6 +179,7 @@ Local Weather
 
 .tomorrow-icon {
 	@include span-columns(1);
+	text-align: center;
 }
 
 .tomorrow-weather-conditions {
@@ -237,4 +240,66 @@ Local Weather
 	background-image: url('night-cloudy.jpg');
 	background-size: cover;
 	background-repeat: no-repeat;	
+}
+
+@include media(max-width $tablet) {
+	.main-title {
+		font-size: 5em;
+	}	
+	.main-get-weather {
+		margin: 2em auto;
+		width: 50%;
+	}
+	.today-weather-container {
+		@include span-columns(12);
+		@include shift(0);
+	}
+	.today-weather-temperature {
+		@include span-columns(8 of 12);
+		@include shift(2);
+		font-size: 10em;
+	}
+	.today-weather-temperature span {
+		right: 28%;
+	}
+	.today-weather-conditions .condition-icon {
+		font-size: 4em;
+	}
+	.tomorrow-weather-container {
+		height: 100px;
+	}
+	.tomorrow-weather-container li {
+		line-height: 100px;
+	}
+	.tomorrow-icon {
+		@include span-columns(.5);
+		@include shift(.5);
+	}
+}
+
+@include media(max-width $mobile) {
+	.main-get-weather {
+		width: 90%;
+	}
+	.main-other-locales {
+		width: 70%;
+	}
+	.today-weather-temperature span {
+		right: 7%;
+	}
+	.tomorrow-heading {
+		@include span-columns(3);
+		@include shift(1);
+	}
+	.tomorrow-icon {
+		@include span-columns(1);
+		@include shift(2.5);
+	}
+	.tomorrow-weather-conditions {
+		display: none;
+	}
+	.tomorrow-weather-max-min {
+		@include span-columns(2);
+		@include shift(1.5);
+	}
 }
